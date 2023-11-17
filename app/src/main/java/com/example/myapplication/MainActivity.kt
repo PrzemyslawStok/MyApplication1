@@ -3,6 +3,8 @@ package com.example.myapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -22,25 +24,36 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    ShowMessage(Person("Przemysław", "Stokłosa", "Bielsko-Biała"))
                 }
             }
         }
     }
 }
 
+data class Person(val name: String, val surname: String, val adress: String)
+
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
+    Column {
+        Row {
+            Text(
+                text = "${person.name} "
+            )
+            Text(
+                text = " ${person.surname}"
+            )
+        }
+        Row {
+
+        }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
-        Greeting("Android")
+        ShowMessage(Person("Przemysław", "Stokłosa", "Bielsko-Biała"))
     }
 }
