@@ -45,7 +45,7 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
             )
         }
         Row {
-
+            Text(text ="${person.adress} ")
         }
     }
 }
