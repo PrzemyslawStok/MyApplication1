@@ -6,12 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -36,16 +38,16 @@ data class Person(val name: String, val surname: String, val adress: String)
 @Composable
 fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
     Column {
-        Row {
+        Row() {
             Text(
-                text = "${person.name} "
+                text = person.name, modifier = Modifier.padding(all = 4.dp)
             )
             Text(
-                text = " ${person.surname}"
+                text = person.surname, modifier = Modifier.padding(all = 4.dp)
             )
         }
-        Row {
-            Text(text ="${person.adress} ")
+        Row() {
+            Text(text = "${person.adress} ")
         }
     }
 }
