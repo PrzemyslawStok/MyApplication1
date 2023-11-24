@@ -17,6 +17,10 @@ import androidx.compose.ui.unit.dp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
+    companion object {
+        val defaultPerson = Person("Przemysław", "Stokłosa", "Bielsko-Biała")
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -26,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ShowMessage(Person("Przemysław", "Stokłosa", "Bielsko-Biała"))
+                    ShowMessage(defaultPerson)
                 }
             }
         }
@@ -34,6 +38,7 @@ class MainActivity : ComponentActivity() {
 }
 
 data class Person(val name: String, val surname: String, val adress: String)
+
 
 @Composable
 fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
@@ -56,6 +61,6 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
-        ShowMessage(Person("Przemysław", "Stokłosa", "Bielsko-Biała"))
+        ShowMessage(MainActivity.defaultPerson)
     }
 }
