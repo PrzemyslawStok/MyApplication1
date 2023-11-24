@@ -16,9 +16,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
+data class Person(val name: String, val surname: String, val adress: String,val telephone: String)
 class MainActivity : ComponentActivity() {
     companion object {
-        val defaultPerson = Person("Przemysław", "Stokłosa", "Bielsko-Biała")
+        val defaultPerson = Person("Przemysław", "Stokłosa", "Bielsko-Biała", telephone = "12345533")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +38,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-data class Person(val name: String, val surname: String, val adress: String)
 
 
 @Composable
@@ -52,7 +52,10 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
             )
         }
         Row() {
-            Text(text = "${person.adress} ")
+            Text(text = person.adress, modifier = Modifier.padding(all = 4.dp))
+        }
+        Row() {
+            Text(text = person.telephone, modifier = Modifier.padding(all = 4.dp))
         }
     }
 }
