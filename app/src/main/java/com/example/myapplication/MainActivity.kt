@@ -74,6 +74,14 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
                 Text(text = "Zmień dane")
 
             }
+            Button(onClick = {
+                val intent = Intent(context, EditData::class.java)
+                context.startActivity(intent)
+
+            }) {
+                Text(text = "Okienko")
+
+            }
         }
     }
 }
