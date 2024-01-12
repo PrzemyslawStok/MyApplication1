@@ -14,21 +14,21 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
-data class Person(val name: String, val surname: String, val adress: String,val telephone: String)
+data class Person(val name: String, val surname: String, val adress: String, val telephone: String)
 class MainActivity : ComponentActivity() {
     companion object {
-        val defaultPerson = Person("Przemysław", "Stokłosa", "Bielsko-Biała", telephone = "12345533")
+        val defaultPerson =
+            Person("Przemysław", "Stokłosa", "Bielsko-Biała", telephone = "12345533")
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val intent = Intent(this, EditData::class.java)
-        startActivity(intent)
 
         setContent {
             MyApplicationTheme {
@@ -36,6 +36,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
+
                 ) {
                     ShowMessage(defaultPerson)
                 }
@@ -45,9 +46,10 @@ class MainActivity : ComponentActivity() {
 }
 
 
-
 @Composable
 fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+
     Column {
         Row() {
             Text(
@@ -63,8 +65,10 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
         Row() {
             Text(text = person.telephone, modifier = Modifier.padding(all = 4.dp))
         }
-        Row(){
+        Row() {
             Button(onClick = {
+                val intent = Intent(context, EditData::class.java)
+                context.startActivity(intent)
 
             }) {
                 Text(text = "Zmień dane")
