@@ -93,3 +93,4 @@ fun GreetingPreview() {
         ShowMessage(MainActivity.defaultPerson)
     }
 }
+
