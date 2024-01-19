@@ -35,7 +35,7 @@ class EditData : ComponentActivity() {
 @Composable
 fun EditDataView(){
     Text(
-        text = "Edit data", modifier = Modifier.padding(all = 4.dp)
+        text = "Edytuj dane", modifier = Modifier.padding(all = 4.dp)
     )
 }
 

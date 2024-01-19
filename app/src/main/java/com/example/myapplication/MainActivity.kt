@@ -75,7 +75,7 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
 
             }
             Button(onClick = {
-                val intent = Intent(context, EditData::class.java)
+                val intent = Intent(context, EmptyActivity::class.java)
                 context.startActivity(intent)
 
             }) {
