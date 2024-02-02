@@ -9,6 +9,8 @@ import androidx.activity.ComponentActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 
 class EmptyActivity : ComponentActivity() {
+    var number = 0
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +20,13 @@ class EmptyActivity : ComponentActivity() {
         val numberView: TextView = findViewById(R.id.numberView)
 
         layout.setBackgroundColor(Color.CYAN)
-        numberView.text = "0"
+
+        layout.setOnClickListener {
+            number++
+            numberView.text = "${number}"
+        }
+
+        numberView.text = "${number}"
 
     }
 }
