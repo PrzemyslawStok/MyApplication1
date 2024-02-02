@@ -66,16 +66,16 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
             Text(text = person.telephone, modifier = Modifier.padding(all = 4.dp))
         }
         Row() {
+//            Button(onClick = {
+//                val intent = Intent(context, EditData::class.java)
+//                context.startActivity(intent)
+//
+//            }) {
+//                Text(text = "Zmień dane")
+//
+//            }
             Button(onClick = {
-                val intent = Intent(context, EditData::class.java)
-                context.startActivity(intent)
-
-            }) {
-                Text(text = "Zmień dane")
-
-            }
-            Button(onClick = {
-                val intent = Intent(context, EmptyActivity::class.java)
+                val intent = Intent(context, Game1::class.java)
                 context.startActivity(intent)
 
             }) {
@@ -83,7 +83,7 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
 
             }
             Button(onClick = {
-                val intent = Intent(context, Game1::class.java)
+                val intent = Intent(context, Game2::class.java)
                 context.startActivity(intent)
 
             }) {

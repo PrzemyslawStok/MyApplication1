@@ -2,15 +2,14 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 
-class EmptyActivity : ComponentActivity() {
-    var number = 0
+class Game2 : ComponentActivity() {
+    var number = 1000
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
