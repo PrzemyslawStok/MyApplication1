@@ -14,7 +14,9 @@ class Game2 : ComponentActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_empty)
+
+
+        setContentView(R.layout.activity_game2)
 
         val layout: ConstraintLayout = findViewById(R.id.constraintLayout)
         val numberView: TextView = findViewById(R.id.numberView)
