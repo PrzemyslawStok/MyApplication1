@@ -17,6 +17,10 @@
             android:theme="@style/Theme.MyApplication"
             android:exported="false" />
         <activity
+            android:name=".Game1"
+            android:theme="@style/Theme.MyApplication"
+            android:exported="false" />
+        <activity
             android:name=".Activity2"
             android:exported="false" />
         <activity
