@@ -90,6 +90,14 @@ fun ShowMessage(person: Person, modifier: Modifier = Modifier) {
                 Text(text = "Gra 2")
 
             }
+            Button(onClick = {
+                val intent = Intent(context, Game3::class.java)
+                context.startActivity(intent)
+
+            }) {
+                Text(text = "Gra 3")
+
+            }
         }
     }
 }
